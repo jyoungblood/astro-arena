@@ -16,10 +16,8 @@ Astro content collections that use the Are.na v3 API.
 
 ## Install
 
-Install the package with your package manager.
-
 ```sh
-pnpm add astro-arena
+npm install astro-arena
 ```
 
 ## Load a channel
@@ -102,8 +100,6 @@ const references = defineCollection({
 Nested channels use `channel:{id}` as the entry ID. This prefix prevents a collision with a block ID.
 
 ## Access private content
-
-> **WARNING:** A static build can copy private Are.na content into public site files. Inspect the build output before deployment.
 
 Add the token to `.env` during local development.
 
