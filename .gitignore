@@ -1,0 +1,14 @@
+node_modules/
+.npm-cache/
+.pnpm-store/
+dist/
+coverage/
+.astro/
+fixtures/*/.astro/
+fixtures/*/dist/
+.env
+.env.*
+!.env.example
+*.tgz
+*.tsbuildinfo
+.DS_Store

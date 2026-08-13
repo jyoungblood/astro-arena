@@ -1,0 +1,9 @@
+---
+import { getCollection } from "astro:content";
+
+const _channel = await getCollection("channel");
+const _featured = await getCollection("featured");
+---
+
+<h1>Astro 6 fixture</h1>
+<p>{_channel.length + _featured.length} entries</p>

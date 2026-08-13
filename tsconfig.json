@@ -1,0 +1,13 @@
+{
+  "extends": "astro/tsconfigs/strictest",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "exactOptionalPropertyTypes": true,
+    "noEmit": true,
+    "noUncheckedIndexedAccess": true,
+    "rootDir": ".",
+    "verbatimModuleSyntax": true
+  },
+  "include": ["src", "test", "tsup.config.ts", "vitest.config.ts", "vitest.smoke.config.ts"]
+}

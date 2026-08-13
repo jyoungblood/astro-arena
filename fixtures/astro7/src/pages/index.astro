@@ -1,0 +1,8 @@
+---
+import { getCollection } from "astro:content";
+
+const _entries = await getCollection("staticChannel");
+---
+
+<h1>Astro 7 fixture</h1>
+<p>{_entries.length} static entries</p>

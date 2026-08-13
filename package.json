@@ -1,0 +1,84 @@
+{
+  "name": "astro-arena",
+  "version": "0.1.0",
+  "description": "Astro content loaders for the Are.na v3 API",
+  "type": "module",
+  "sideEffects": false,
+  "license": "MIT",
+  "author": "Jonathan Youngblood",
+  "homepage": "https://github.com/jyoungblood/astro-arena#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jyoungblood/astro-arena.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jyoungblood/astro-arena/issues"
+  },
+  "keywords": [
+    "arena",
+    "are.na",
+    "astro",
+    "astro-loader",
+    "content-collections",
+    "withastro"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@11.1.3",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./api": {
+      "types": "./dist/api.d.ts",
+      "import": "./dist/api.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "docs",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup && node scripts/check-exports.mjs",
+    "check": "biome check .",
+    "check:package": "node scripts/check-package.mjs",
+    "check:workflows": "node scripts/check-workflows.mjs",
+    "check:astro6": "pnpm --filter @astro-arena/fixture-astro6 check && pnpm --filter @astro-arena/fixture-astro6 build",
+    "check:astro7": "pnpm --filter @astro-arena/fixture-astro7 check && pnpm --filter @astro-arena/fixture-astro7 build",
+    "check:docs": "node scripts/check-docs.mjs",
+    "check:docs:external": "node scripts/check-external-links.mjs",
+    "audit:secrets": "node scripts/audit-secrets.mjs",
+    "format": "biome check --write .",
+    "prepublishOnly": "pnpm run build && pnpm run test && pnpm run check:package",
+    "test": "vitest run",
+    "test:smoke": "ARENA_SMOKE_TEST=1 vitest run --config vitest.smoke.config.ts",
+    "test:tarball": "node scripts/test-tarball.mjs",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "verify": "pnpm run check && pnpm run typecheck && pnpm run test && pnpm run build && pnpm run check:docs && pnpm run check:docs:external && pnpm run check:workflows && pnpm run check:package && pnpm run check:astro6 && pnpm run check:astro7 && pnpm run audit:secrets"
+  },
+  "dependencies": {
+    "@aredotna/sdk": "^0.1.1"
+  },
+  "peerDependencies": {
+    "astro": "^6.0.0 || ^7.0.0"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
+    "@biomejs/biome": "^2.5.8",
+    "@types/node": "^26.2.0",
+    "actionlint": "2.0.6",
+    "astro": "^7.2.1",
+    "msw": "^2.15.0",
+    "publint": "^0.3.23",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10"
+  }
+}

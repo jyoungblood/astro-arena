@@ -1,0 +1,8 @@
+---
+import { getLiveCollection } from "astro:content";
+
+const _result = await getLiveCollection("liveChannel", { page: 1 });
+---
+
+<h1>Astro 7 live fixture</h1>
+<p>{_result.entries?.length ?? 0} live entries</p>
