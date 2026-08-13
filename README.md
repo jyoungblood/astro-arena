@@ -5,7 +5,7 @@ Astro content collections that use the Are.na v3 API.
 `astro-arena` provides loaders for Are.na channels and blocks. It also provides the complete official Are.na SDK for custom collections.
 
 
-*** ⚠️ UNDER CONSTRUCTION - not yet ready for public use ⚠️ ***
+***⚠️ UNDER CONSTRUCTION - not yet ready for public use ⚠️***
 
 
 ## Requirements
