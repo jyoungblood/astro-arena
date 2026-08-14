@@ -1,6 +1,8 @@
 # Live collections
 
-Live collections get data during a server request. Use Astro 7 and configure a server adapter.
+Live collections get data during each server request. They do not run in browser JavaScript.
+
+A site can keep static pages. Each live-collection route requires on-demand rendering and a server adapter.
 
 Read the [Astro live content guide](https://docs.astro.build/en/guides/content-collections/#live-content-collections) for the current Astro API.
 

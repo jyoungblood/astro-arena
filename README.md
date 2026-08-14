@@ -5,9 +5,6 @@ Astro content collections that use the Are.na v3 API.
 `astro-arena` provides loaders for Are.na channels and blocks. It also provides the complete official Are.na SDK for custom collections.
 
 
-***⚠️ UNDER CONSTRUCTION - not yet ready for public use ⚠️***
-
-
 ## Requirements
 
 - Astro 6 or Astro 7
@@ -146,11 +143,11 @@ Read [Custom SDK collections](docs/custom-collections.md) for singleton, list, a
 
 ## Live collections
 
-`arena.liveChannel()` gets one channel page when a server request needs it. Live collections require a server adapter.
+`arena.liveChannel()` gets one channel page during each server request. It does not run in browser JavaScript.
 
-Use a live collection only when request-time data is necessary. The loader does not poll Are.na.
+A site can keep static pages. Each live-collection route requires on-demand rendering and a server adapter.
 
-See [Live collections](docs/live-collections.md) for the Astro 7 configuration and cache behavior.
+Read [Astro live content collections](https://docs.astro.build/en/guides/content-collections/#live-content-collections) for rendering requirements. See [Live collections](docs/live-collections.md) for configuration and cache behavior.
 
 ## Troubleshooting
 
@@ -195,4 +192,4 @@ Read [Troubleshooting](docs/troubleshooting.md) for more errors and corrective a
 
 ## License
 
-MIT
+astro-arena is available under the [MIT License](./LICENSE).
