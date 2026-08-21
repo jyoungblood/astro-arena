@@ -1,5 +1,7 @@
 # astro-arena
 
+![Astro + Are.na](./docs/assets/astro-arena.svg)
+
 Astro content collections that use the Are.na v3 API.
 
 `astro-arena` provides loaders for Are.na channels and blocks. It also provides the complete official Are.na SDK for custom collections.
@@ -27,7 +29,7 @@ import { arena } from "astro-arena";
 
 const references = defineCollection({
   loader: arena.channel({
-    url: "https://www.are.na/are-na-team/arena-influences",
+    url: "https://www.are.na/j-youngblood/posters-ugpnnka-71q",
     query: {
       page: 1,
       per: 24,
@@ -40,6 +42,10 @@ export const collections = { references };
 ```
 
 The loader gets one page for each content synchronization. It never gets all pages automatically.
+
+The `sort` value controls the Are.na response and page selection. Astro does not keep this order in a build-time collection.
+
+Sort the result from `getCollection()` when display order is important. Read [Pagination and filters](docs/pagination-and-filters.md#build-time-collection-order).
 
 Blocks use their Are.na ID as the entry ID. For example, block `45029519` has the entry ID `"45029519"`.
 

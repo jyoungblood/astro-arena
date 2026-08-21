@@ -21,10 +21,32 @@ The channel contents endpoint currently supports these query properties:
 
 - `page`: Selects the page number.
 - `per`: Sets the number of items on the page.
-- `sort`: Sets the Are.na channel-content order.
+- `sort`: Sets the order of the Are.na response.
 - `user_id`: Selects content that a user connected.
 
 The loader forwards additional query properties. This behavior supports additive Are.na API changes.
+
+### Build-time collection order
+
+The `sort` value controls which items Are.na includes on the requested page. Astro does not keep this order in a build-time collection.
+
+Astro stores build-time entries by ID. As a result, `getCollection()` does not return entries in the Are.na response order.
+
+If display order is important, sort the returned entries in the page. This example applies `position_desc` to the stored connection positions:
+
+```astro
+---
+import { getCollection } from "astro:content";
+
+const references = (await getCollection("references")).sort(
+  (a, b) =>
+    (b.data.connection?.position ?? -1) -
+    (a.data.connection?.position ?? -1),
+);
+---
+```
+
+Use `created_at` or `updated_at` for the equivalent date sort. Each entry keeps these Are.na fields in `entry.data`.
 
 ## Explicit SDK pagination
 
@@ -58,6 +80,8 @@ const { entries, error } = await getLiveCollection("references", {
 ```
 
 Runtime values have priority over values in `arena.liveChannel()`. The live loader also gets only one page per call.
+
+`getLiveCollection()` returns the entry array from the loader. The array keeps the order of the Are.na response.
 
 ## Application filters
 

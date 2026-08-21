@@ -28,6 +28,8 @@ These additional properties control the request:
 
 The loader forwards query parameters without changes. It gets blocks only by default.
 
+Astro does not keep the response order in a build-time collection. Read [Build-time collection order](pagination-and-filters.md#build-time-collection-order).
+
 ## `arena.block()`
 
 This loader gets one complete block.
