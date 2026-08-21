@@ -7,11 +7,14 @@ Astro content collections that use the Are.na v3 API.
 `astro-arena` provides loaders for Are.na channels and blocks. It also provides the complete official Are.na SDK for custom collections.
 
 
+See the demo implementation: [https://astro-arena.pages.dev](https://astro-arena.pages.dev) ([source](https://github.com/jyoungblood/astro-arena-demo))
+
+
 ## Requirements
 
 - Astro 6 or Astro 7
 - Node.js 20 or a newer version
-- An Are.na token for private resources
+- [Are.na API token](https://www.are.na/developers/personal-access-tokens) for private resources
 
 ## Install
 
