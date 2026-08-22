@@ -2,7 +2,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { basename, join, resolve } from "node:path";
 
 const projectRoot = resolve(import.meta.dirname, "..");
-const roots = [projectRoot, resolve(projectRoot, "../astro-arena-playground")];
+const roots = [projectRoot];
 const ignored = new Set([".git", ".astro", "coverage", "dist", "node_modules"]);
 const findings = [];
 

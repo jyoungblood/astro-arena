@@ -2,7 +2,7 @@
 
 All notable changes to this project will appear in this file.
 
-## 0.1.0 - Unreleased
+## 0.1.0 - 2026-08-21
 
 - Add static Are.na channel and block loaders.
 - Add the Astro 7 live channel loader.
